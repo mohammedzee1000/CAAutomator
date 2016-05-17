@@ -2,5 +2,5 @@
 
 from  rootca import RootCA
 
-theca = RootCA(".")
-print theca.ca_loc_certs
+theca = RootCA("./ca")
+theca.create_config()
