@@ -5,20 +5,32 @@ from ConfigParser import RawConfigParser
 class CA:
     """Abstract class defines a CA."""
     # Consts
-    ca_dir_certs = "certs"
-    ca_dir_crl = "crl"
-    ca_dir_newcerts = "newcerts"
-    ca_dir_private = "private"
-    ca_dir_csr = "csr"
+    d_certs = "certs"
+    d_crl = "crl"
+    d_newcerts = "newcerts"
+    d_private = "private"
+    d_csr = "csr"
 
-    ca_file_index = "index.txt"
-    ca_file_serial = "serial"
-    ca_file_crlnumber = "crlnumber"
-    ca_file_cnf = "openssl.cnf"
+    f_index = "index.txt"
+    f_serial = "serial"
+    f_crlnumber = "crlnumber"
+    f_cnf = "openssl.cnf"
 
     def __init__(self):
 
         self.ca_dir = "/root/ca"
-        self.ca_certs = self.ca_dir + "/" + CA.ca_dir_certs
+        self.ca_loc_certs = ""
+        self.ca_loc_crl = ""
+        self.ca_loc_newcerts = ""
+        self.ca_loc_private = ""
+        self.ca_loc_csr = ""
+
+        return
+
+    def child_init(self):
+
+        self.ca_loc_certs = self.ca_dir + "/" + CA.d_certs
+        self.ca_loc_crl = self.ca_dir + "/" + CA.d_crl
+
 
         return
